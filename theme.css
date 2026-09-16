@@ -1174,6 +1174,7 @@ input[type=checkbox]:checked:after {
 }
 
 /* Check */
+/* Check */
 input[data-task="x"]:checked,
 li[data-task="x"]>input:checked,
 li[data-task="x"]>p>input:checked,
@@ -1181,7 +1182,10 @@ input[data-task="X"]:checked,
 li[data-task="X"]>input:checked,
 li[data-task="X"]>p>input:checked {
 	-webkit-mask-position: 50% 50%;
-	-webkit-mask-size: 90%;
+	-webkit-mask-repeat: no-repeat; /* <-- Запрещает тайлинг маски */
+	mask-repeat: no-repeat;
+	-webkit-mask-size: 85%;         /* <-- 85% оставляет безопасный отступ до краев */
+	mask-size: 85%;
 	-webkit-mask-image: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="none" fill-rule="evenodd" stroke="%23999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 12 6 15 12 6"></polyline></svg>');
 }
 
@@ -1394,6 +1398,47 @@ li[data-task="+"]>p>input:after {
 	-webkit-mask-image: none !important;
 }
 
+/* ————— ЕДИНЫЙ СТИЛЬ ЧЕКБОКСОВ ДЛЯ СВОЙСТВ (PROPERTIES) ————— */
+
+/* 1. Пустой чекбокс в свойствах */
+.metadata-property input[type=checkbox] {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    border-radius: var(--checkbox-radius, 30%);
+    border: 1px solid var(--checkbox-border-color, var(--background-modifier-border));
+    width: var(--checkbox-size, 17px) !important;
+    height: var(--checkbox-size, 17px) !important;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Ховер на пустом чекбоксе */
+.metadata-property input[type=checkbox]:hover {
+    border-color: var(--checkbox-border-color-hover, var(--text-muted));
+}
+
+/* 2. Подложка для отмеченного чекбокса */
+.metadata-property input[type=checkbox]:checked {
+    background-color: var(--color-accent, var(--checkbox-marker-color));
+    border-color: var(--color-accent, var(--checkbox-marker-color));
+}
+
+/* 3. Отрисовка бежевой/серой SVG-галочки темы через маску */
+.metadata-property input[type=checkbox]:checked {
+    -webkit-mask-position: 50% 50%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 90%;
+    -webkit-mask-image: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="none" fill-rule="evenodd" stroke="%23999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 12 6 15 12 6"></polyline></svg>');
+}
+
+/* Отключаем псевдоэлемент :after, который давал сплошную коричневую плашку */
+.metadata-property input[type=checkbox]:checked:after {
+    display: none !important;
+}
+
 /* ========================================================================= */
 /* 5. DATAVIEW (ezzick-020-dataview.css)                                     */
 /* ========================================================================= */
@@ -1582,10 +1627,49 @@ body [role="switch"]>span {
 	filter: brightness(0.2) sepia(0.8) hue-rotate(5deg) saturate(3) contrast(1.5);
 }
 
-/* ────────── < PROPERTIES | УПРАВЛЕНИЕ СВОЙСТВАМИ > ────────── */
+/* ────────── < ОСОБЫЕ КЛАССЫ ОФОРМЛЕНИЯ > ────────── */
 
 /* 1. Полное скрытие свойств в дашбордах и при классе hide-properties */
 .dashboard-right-panel .metadata-container,
 .hide-properties .metadata-container {
 	display: none !important;
+}
+
+/* 2. Принудительная светлая тема для отдельной заметки */
+.theme-dark .light-note,
+.theme-dark .mod-root .workspace-leaf:has(.light-note) .view-content {
+	/* Переопределяем цвета из секции .theme-light */
+	--color-base-00: #ece0d1;
+	--color-base-05: #e6dacb;
+	--color-base-10: #d9cbbb;
+	--color-base-20: #cfc0b0;
+	--color-base-25: #b3a291;
+	--color-base-30: #bcac9b;
+	--color-base-35: #a79786;
+	--color-base-40: #9a8b7c;
+	--color-base-50: #9f8875;
+	--color-base-60: #6b5542;
+	--color-base-70: #4f3926;
+	--color-base-100: #38220f;
+
+	--text-normal: var(--color-base-100);
+	--text-muted: var(--color-base-60);
+	--text-faint: var(--color-base-50);
+
+	--background-primary: var(--color-base-00);
+	--background-primary-alt: var(--color-base-10);
+	--background-secondary: var(--color-base-20);
+	--background-secondary-alt: var(--color-base-25);
+	--background-modifier-border: var(--color-base-30);
+
+	--bold-color: var(--color-orange);
+	--italic-color: var(--color-yellow);
+	--mark_text: var(--color-base-100);
+	--code-normal: var(--color-accent-hover);
+
+	--callout-bg-opacity: 22%;
+	
+	/* Фоновый цвет рабочей области редактора */
+	background-color: var(--background-primary) !important;
+	color: var(--text-normal);
 }
