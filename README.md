@@ -34,8 +34,6 @@
    ├── theme.css
    └── manifest.json
 
-```
-
 4. В Obsidian откройте **Настройки → Оформление → Тема** и выберите **Ezzick Coffee**.
 
 ---
@@ -48,8 +46,6 @@
 * **Заголовки:** Vollkorn
 * **Интерфейс:** Circe
 * **Моноширинный текст и код:** Roboto Mono / JetBrains Mono
-
----
 
 ## 📄 Лицензия
 
