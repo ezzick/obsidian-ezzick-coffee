@@ -1,0 +1,1591 @@
+/*------------------------------------------------------------------------------
+                         EZZICK COFFEE THEME FOR OBSIDIAN                      
+                             Version 1.0.0 by lady_ezzick                            
+------------------------------------------------------------------------------*/
+
+/* ========================================================================= */
+/* 1. DESIGN SYSTEM & VARIABLES (ezzick-001-var.css)                         */
+/* ========================================================================= */
+
+:root {
+	/* шрифты */
+	--default-font: mulish, "Readex Pro", "Helvetica Neue", sans-serif;
+	--font-interface: circe, monospace;
+	--header-font: Vollkorn, sans-serif;
+
+	/*--font-monospace: Play, Montserrat, "Courier New", monospace;*/
+	--font-monospace: 'Roboto Mono', 'JetBrains Mono', Consolas, 'SF Mono', 'Courier New', monospace;
+	--font-text: mulish, sans-serif;
+	--font-text-comment: Excalifont, "GOST type B", mulish, sans-serif;
+	--font-callout_title: circe, sans-serif;
+}
+
+.theme-dark {
+	/* ————— шрифты: начертания, размеры, толщина ————— */
+	--font_title: var(--header-font);
+	--font-small: calc(var(--font-text-size) - 2px);
+	--font-smaller: calc(var(--font-text-size) - 4px);
+	--font-tiny: calc(var(--font-text-size) - 6px);
+
+	--weight_thinnest: 100;
+	--weight_light: 300;
+	--weight_medium: 600;
+	--weight_bold: 800;
+
+	/* ————— цвета ————— */
+	--color-base-00: #161616;
+	--color-base-05: #1a1a1a;
+	--color-base-10: #1d1d1d;
+	--color-base-20: #202020;
+	--color-base-25: #231e1a;
+	/* color-brown_dark */
+	--color-base-30: #c6b18b;
+	/* color-brown_light */
+	--color-base-35: #a89676;
+	--color-base-40: #5a5a5a;
+	--color-base-50: #777777;
+	--color-base-60: #999999;
+	--color-base-70: #a8a8a8;
+	--color-base-100: #b9b9b9;
+
+	--color-white: #f7f9fc;
+
+	--color-red: #da6362;
+	--color-red-rgb: 218, 99, 98;
+
+	--color-orange: #d77f48;
+	--color-orange-rgb: 215, 127, 72;
+
+	--color-yellow: #ddb246;
+	--color-yellow-rgb: 221, 178, 70;
+
+	--color-green: #899c40;
+	--color-green-rgb: 137, 156, 64;
+
+	--color-blue: #5a93a2;
+	--color-blue-rgb: 168, 188, 219;
+	--color-blue-link: #a8bcdb;
+
+	--color-pink: #b87b9d;
+	--color-pink-rgb: 184, 123, 157;
+
+	--color-purple: #8d8dc9;
+	--color-purple-rgb: 141, 141, 201;
+
+	/* ————— базовые переменные Obsidian ————— */
+	--color-accent: var(--color-base-30);
+	--color-accent-hsl: 38, 37%, 66%;
+	--accent-h: 38;
+	--accent-s: 37%;
+	--accent-l: 66%;
+	--focus-ring-color: var(--color-accent);
+
+	--color-accent-hover: #c09c5d;
+	--color-highlight: #d3c6aa;
+
+	--background-primary: var(--color-base-00);
+	--background-primary-alt: var(--color-base-10);
+	--background-secondary: var(--color-base-20);
+	--background-secondary-alt: var(--color-base-10);
+	--background-modifier-border: var(--color-base-30);
+	--background-modifier-box-shadow: color-mix(in srgb, var(--text-normal) 15%, transparent);
+
+	--interactive-normal: var(--background-primary);
+	--interactive-hover: var(--background-primary-alt);
+	--interactive-accent: var(--color-accent);
+	--interactive-accent-hover: var(--color-accent-hover);
+
+	--text-normal: var(--color-base-100);
+	--text-muted: var(--color-base-60);
+	--text-faint: var(--color-base-50);
+	--text-on-accent: var(--color-white);
+	--text-accent: var(--color-highlight);
+
+	/* ————— заголовки ————— */
+	--h1-color: var(--color-red);
+	--h2-color: var(--color-orange);
+	--h3-color: var(--color-yellow);
+	--h4-color: var(--color-green);
+	--h5-color: var(--color-blue);
+	--h6-color: var(--color-purple);
+
+	--h1-weight: var(--weight_bold);
+	--h2-weight: var(--weight_bold);
+	--h3-weight: var(--weight_medium);
+	--h4-weight: var(--weight_medium);
+	--h5-weight: var(--weight_medium);
+	--h6-weight: var(--weight_medium);
+
+	/* ————— текст ————— */
+	--bold-color: var(--color-yellow);
+	/* отличается от светлой темы */
+	--italic-color: var(--color-orange);
+	/* отличается от светлой темы */
+	--bold-italic-color: var(--color-green);
+	--bolditalic_color: var(--bold-italic-color);
+	--comment_color: var(--color-base-40);
+	--strikethrough-color: var(--color-base-40);
+	--strike_color: var(--strikethrough-color);
+
+	--link-color: var(--color-blue-link);
+	--link-external-color: var(--color-blue-link);
+	--link-unresolved-color: var(--color-purple);
+
+	--text-highlight-bg: var(--color-highlight);
+	--mark_background: var(--text-highlight-bg);
+	--mark_text: var(--color-base-25);
+	/* отличается от светлой темы */
+
+	/* ————— таблица ————— */
+	--table-header-background: var(--color-highlight);
+	--table-header-color: var(--mark_text);
+	--table-border-color: var(--color-base-40);
+
+	/* ————— инлайн и блок кода ————— */
+	--code-normal: var(--color-highlight);
+	/* отличается от светлой темы */
+	--code-background: var(--color-base-20);
+	--block_background: var(--code-background);
+	--block_border_color: var(--color-base-40);
+	--block_border_radius: 7px;
+	--background-inline-code: var(--block_background);
+
+	/* ————— теги ————— */
+	--tag-background: transparent;
+	--tag-background-hover: var(--code-background);
+	--tag-border-color: var(--color-accent);
+	--tag-border-color-hover: var(--color-accent);
+	--tag-border-width: 1px;
+	--tag-color: var(--color-highlight);
+	/* отличается от светлой темы */
+	--tag-color-hover: var(--color-highlight);
+	--tag-radius: 14px;
+	--tag_font: var(--font-monospace);
+
+	/* ————— чекбоксы ————— */
+	--checkbox-size: 17px;
+	--checkbox-radius: 30%;
+
+	--checkbox-color-hover: var(--color-accent-hover);
+	--checkbox-border-color: var(--background-modifier-border);
+	--checkbox-border-color-hover: var(--text-muted);
+	--checkbox-marker-color: var(--interactive-accent);
+
+	/* ————— свойства ————— */
+	--metadata-label-text-color: var(--text-muted);
+	--metadata-input-text-color: var(--text-normal);
+	--metadata-label-width: 12em;
+	--metadata-input-font-size: var(--font-tiny);
+
+	/* ————— цитаты ————— */
+	--blockquote-border-color: var(--color-highlight);
+	--blockquote-background: var(--color-base-10);
+	--blockquote_border_color: var(--blockquote-border-color);
+	--blockquote_background: var(--blockquote-background);
+	--blockquote_color: var(--text-normal);
+
+	/* ————— callout ————— */
+	--callout-title-size: var(--font-text-size);
+
+	--callout-note-color: #999999;
+	/* 153, 153, 153; */
+	--callout-info-color: #5f8caf;
+	/* 95, 140, 175; */
+	--callout-todo-color: var(--color-blue);
+	--callout-summary-color: #5f9e7d;
+	/* 95, 158, 125; */
+	--callout-important-color: var(--color-red);
+	--callout-quote-color: var(--color-base-30);
+	--callout-highlighter-color: #e1b932;
+	/* 225, 185, 50; */
+	--callout-inbox-color: #917db9;
+	/* 145, 125, 185; */
+	--callout-connect-color: var(--color-blue-link);
+
+	/* ————— вкладки ————— */
+	--tab-font-weight-active: var(--weight_light);
+	--tab-font-size: 12px;
+	--tab-stacked-font-weight: var(--weight_thinnest);
+	--tab-stacked-font-size: 15px;
+
+	/* ————— интерактивные элементы ————— */
+	--titlebar-text-color-focused: var(--color-accent-hover);
+
+	--collapse-icon-color: var(--color-accent);
+	--collapse-icon-color-collapsed: var(--color-red);
+
+} 
+
+.theme-light {
+	/* ————— шрифты: начертания, размеры, толщина ————— */
+	--font_title: var(--header-font);
+
+	--font-small: calc(var(--font-text-size) - 2px);
+	--font-smaller: calc(var(--font-text-size) - 4px);
+	--font-tiny: calc(var(--font-text-size) - 6px);
+
+	--weight_thinnest: 100;
+	--weight_light: 300;
+	--weight_medium: 600;
+	--weight_bold: 800;
+
+	/* ————— цвета ————— */
+	--color-base-00: #ece0d1;
+	--color-base-05: #e6dacb;
+	--color-base-10: #d9cbbb;
+	--color-base-20: #cfc0b0;
+	--color-base-25: #b3a291;
+	--color-base-30: #bcac9b;
+	--color-base-35: #a79786;
+	--color-base-40: #9a8b7c;
+	--color-base-50: #9f8875;
+	--color-base-60: #6b5542;
+	--color-base-70: #4f3926;
+	--color-base-100: #38220f;
+
+	--color-white: #f7f9fc;
+
+	--color-red: #8b301b;
+	--color-red-rgb: 175, 84, 35;
+
+	--color-orange: #c26115;
+	--color-orange-rgb: 173, 102, 31;
+
+	--color-yellow: #997a00;
+	--color-yellow-rgb: 175, 148, 35;
+
+	--color-green: #4a6b36;
+	--color-green-rgb: 74, 107, 54;
+
+	--color-blue: #3b6273;
+	--color-blue-rgb: 59, 98, 115;
+	--color-blue-link: #2c4b63;
+
+	--color-pink: #944565;
+	--color-pink-rgb: 148, 69, 101;
+
+	--color-purple: #654273;
+	--color-purple-rgb: 101, 66, 115;
+
+	/* ————— базовые переменные Obsidian ————— */
+
+	/* todo: На какой заменить, чтобы был не --color-orange, но тоже хороший акцент? Или можно заменить оранжевый на другой оттенок?	*/
+	--color-accent: #c2854b;
+	/* 6b5542 */
+	--color-accent-hsl: 29, 70%, 40%;
+	--accent-h: 29;
+	--accent-s: 70%;
+	--accent-l: 40%;
+	--focus-ring-color: var(--color-accent);
+
+	--color-accent-hover: #925215;
+	--color-highlight: #c89568;
+
+	--background-primary: var(--color-base-00);
+	--background-primary-alt: var(--color-base-10);
+	--background-secondary: var(--color-base-20);
+	--background-secondary-alt: var(--color-base-25);
+	--background-modifier-border: var(--color-base-30);
+	--background-modifier-box-shadow: color-mix(in srgb, var(--text-normal) 15%, transparent);
+
+	--interactive-normal: var(--background-primary);
+	--interactive-hover: var(--background-primary-alt);
+	--interactive-accent: var(--color-accent);
+	--interactive-accent-hover: var(--color-accent-hover);
+
+	--text-normal: var(--color-base-100);
+	--text-muted: var(--color-base-60);
+	--text-faint: var(--color-base-50);
+	--text-on-accent: var(--color-white);
+	--text-accent: var(--color-highlight);
+
+	/* ————— заголовки ————— */
+	--h1-color: var(--color-red);
+	--h2-color: var(--color-orange);
+	--h3-color: var(--color-yellow);
+	--h4-color: var(--color-green);
+	--h5-color: var(--color-blue);
+	--h6-color: var(--color-purple);
+
+	--h1-weight: var(--weight_bold);
+	--h2-weight: var(--weight_bold);
+	--h3-weight: var(--weight_medium);
+	--h4-weight: var(--weight_medium);
+	--h5-weight: var(--weight_medium);
+	--h6-weight: var(--weight_medium);
+
+	/* ————— текст ————— */
+	--bold-color: var(--color-orange);
+	/* отличается от тёмной темы */
+	--italic-color: var(--color-yellow);
+	/* отличается от тёмной темы */
+	--bold-italic-color: var(--color-green);
+	--bolditalic_color: var(--bold-italic-color);
+	--comment_color: var(--color-base-40);
+	--strikethrough-color: var(--color-base-40);
+	--strike_color: var(--strikethrough-color);
+
+	--link-color: var(--color-blue-link);
+	--link-external-color: var(--color-blue-link);
+	--link-unresolved-color: var(--color-purple);
+
+	--text-highlight-bg: var(--color-highlight);
+	--mark_background: var(--text-highlight-bg);
+	--mark_text: var(--color-base-100);
+	/* отличается от тёмной темы */
+
+	/* ————— таблица ————— */
+	--table-header-background: var(--color-highlight);
+	--table-header-color: var(--mark_text);
+	--table-border-color: var(--color-base-40);
+
+	/* ————— инлайн и блок кода ————— */
+	--code-normal: var(--color-accent-hover);
+	/* отличается от тёмной темы */
+	--code-background: var(--color-base-20);
+	--block_background: var(--code-background);
+	--block_border_color: var(--color-base-40);
+	--block_border_radius: 7px;
+	--block_accent_font_color: var(--color-yellow);
+	--background-inline-code: var(--block_background);
+
+	/* ————— теги ————— */
+	--tag-background: transparent;
+	--tag-background-hover: var(--code-background);
+	--tag-border-color: var(--color-accent);
+	--tag-border-color-hover: var(--color-accent);
+	--tag-border-width: 1px;
+	--tag-color: var(--color-accent-hover);
+	/* отличается от светлой темы */
+	--tag-color-hover: var(--color-accent-hover);
+	/* отличается от светлой темы */
+	--tag-radius: 14px;
+	--tag_font: var(--font-monospace);
+
+	/* ————— чекбоксы ————— */
+	--checkbox-size: 17px;
+	--checkbox-radius: 30%;
+
+	--checkbox-color-hover: var(--color-accent-hover);
+	--checkbox-border-color: var(--background-modifier-border);
+	--checkbox-border-color-hover: var(--text-muted);
+	--checkbox-marker-color: var(--interactive-accent);
+
+	/* ————— свойства ————— */
+	--metadata-label-text-color: var(--text-muted);
+	--metadata-input-text-color: var(--text-normal);
+	--metadata-label-width: 12em;
+	--metadata-input-font-size: var(--font-tiny);
+
+	/* ————— цитаты ————— */
+	--blockquote-border-color: var(--color-highlight);
+	--blockquote-background: var(--color-base-10);
+	--blockquote_border_color: var(--blockquote-border-color);
+	--blockquote_background: var(--blockquote-background);
+	--blockquote_color: var(--text-normal);
+
+	/* ————— callout ————— */
+	--callout-title-size: var(--font-text-size);
+
+	--callout-note-color: #6b5542;
+	/* 107, 85, 66; */
+	--callout-info-color: #2d73aa;
+	/* 45, 115, 170; */
+	--callout-todo-color: #5a93a2;
+	/* 90, 147, 162; */
+	--callout-summary-color: #286950;
+	/* 40, 105, 80; */
+	--callout-important-color: #fa5252;
+	/* 40, 105, 80; */
+	--callout-quote-color: #96693c;
+	/* 150, 105, 60; */
+	--callout-highlighter-color: #a57d14;
+	/* 165, 125, 20; */
+	--callout-inbox-color: #6e468c;
+	/*  110, 70, 140; */
+	--callout-at-color: #8d8dc9;
+	/* 141, 141, 201; */
+	--callout-connect-color: #556e91;
+	/* 85, 110, 145; */
+
+	/* ————— вкладки ————— */
+	--tab-font-weight-active: var(--weight_light);
+	--tab-font-size: 12px;
+	--tab-stacked-font-weight: var(--weight_thinnest);
+	--tab-stacked-font-size: 15px;
+
+	/* ————— интерактивные элементы ————— */
+	--titlebar-text-color-focused: var(--color-accent-hover);
+
+	--collapse-icon-color: var(--color-accent);
+	--collapse-icon-color-collapsed: var(--color-red);
+
+}
+
+
+/* ========================================================================= */
+/* 2. CORE INTERFACE & TYPOGRAPHY (ezzick-010-main.css)                     */
+/* ========================================================================= */
+
+body {
+	line-height: 1;
+	margin: 0px;
+}
+
+.workspace-split.mod-root .view-content {
+	background-color: var(--background-primary);
+}
+
+.markdown-preview-view h1,
+.cm-s-obsidian .cm-header-1,
+h1,
+.markdown-preview-view h2,
+.cm-s-obsidian .cm-header-2,
+h2,
+.markdown-preview-view h3,
+.cm-s-obsidian .cm-header-3,
+h3,
+.markdown-preview-view h4,
+.cm-s-obsidian .cm-header-4,
+h4,
+.markdown-preview-view h5,
+.cm-s-obsidian .cm-header-5,
+h5,
+.markdown-preview-view h6,
+.cm-s-obsidian .cm-header-6,
+h6 {
+	font-family: var(--header-font) !important;
+	font-variant: small-caps;
+}
+
+.HyperMD-header-1,
+.inline-title[data-level='1'],
+.HyperMD-list-line .cm-header-1,
+.markdown-preview-view h1,
+.cm-s-obsidian .cm-header-1,
+h1 {
+	color: var(--h1-color);
+	font-size: var(--h1-size);
+}
+
+.HyperMD-header-2,
+.inline-title[data-level='2'],
+.HyperMD-list-line .cm-header-2,
+.markdown-preview-view h2,
+.cm-s-obsidian .cm-header-2,
+h2 {
+	color: var(--h2-color);
+	font-size: var(--h2-size);
+}
+
+.HyperMD-header-3,
+.inline-title[data-level='3'],
+.HyperMD-list-line .cm-header-3,
+.markdown-preview-view h3,
+.cm-s-obsidian .cm-header-3,
+h3 {
+	color: var(--h3-color);
+	font-size: var(--h3-size);
+}
+
+.HyperMD-header-4,
+.inline-title[data-level='4'],
+.HyperMD-list-line .cm-header-4,
+.markdown-preview-view h4,
+.cm-s-obsidian .cm-header-4,
+h4 {
+	color: var(--h4-color);
+	font-size: var(--h4-size);
+}
+
+h4.tasks-group-heading {
+	margin-top: 1.6em !important;
+	font-family: var(--header-font) !important;
+	font-variant: small-caps;
+	color: var(--h6-color);
+	font-size: var(--h6-size);
+	font-weight: var(--weight_medium);
+}
+
+.HyperMD-header-5,
+.inline-title[data-level='5'],
+.HyperMD-list-line .cm-header-5,
+.markdown-preview-view h5,
+.cm-s-obsidian .cm-header-5,
+h5 {
+	color: var(--h5-color);
+	font-size: var(--h5-size);
+}
+
+.HyperMD-header-6,
+.inline-title[data-level='6'],
+.HyperMD-list-line .cm-header-6,
+.markdown-preview-view h6,
+.cm-s-obsidian .cm-header-6,
+h6 {
+	color: var(--h6-color);
+	font-size: var(--h6-size);
+}
+
+h1::before,
+.HyperMD-header-1::before,
+h2::before,
+.HyperMD-header-2::before,
+h3::before,
+.HyperMD-header-3::before,
+h4:not(.tasks-group-heading)::before,
+.HyperMD-header-4:not(.tasks-group-heading)::before,
+h5::before,
+.HyperMD-header-5::before,
+h6::before,
+.HyperMD-header-6::before {
+	content: "";
+	display: block;
+	background: var(--color-base-40);
+	height: 1.5px;
+}
+
+h1::before,
+.HyperMD-header-1::before {
+	width: 90%;
+}
+
+h2::before,
+.HyperMD-header-2::before {
+	width: 75%;
+}
+
+h3::before,
+.HyperMD-header-3::before {
+	width: 60%;
+}
+
+h4:not(.tasks-group-heading)::before,
+.HyperMD-header-4:not(.tasks-group-heading)::before {
+	width: 50%;
+}
+
+h5::before,
+.HyperMD-header-5::before {
+	width: 35%;
+}
+
+h6::before,
+.HyperMD-header-6::before {
+	width: 20%;
+}
+
+p,
+.markdown-source-view,
+.markdown-preview-view,
+.markdown-source-view.mod-cm6 .cm-scroller {
+	font-family: var(--font-text) !important;
+	line-height: 1.5;
+	word-wrap: normal;
+}
+
+em,
+.cm-italic,
+.cm-em {
+	color: var(--italic-color);
+}
+
+strong,
+.cm-strong {
+	color: var(--bold-color);
+}
+
+strong em,
+em strong,
+.cm-strong.cm-em,
+.markdown-preview-view strong em {
+	color: var(--bold-italic-color);
+}
+
+del,
+.cm-strikethrough {
+	color: var(--strikethrough-color);
+}
+
+.cm-s-obsidian span.cm-comment {
+	color: var(--comment_color);
+	font-size: var(--font-smaller);
+	font-style: italic;
+	font-family: var(--font-text-comment);
+	font-weight: 50;
+}
+
+.cm-s-obsidian span.cm-comment.cm-link {
+	color: var(--comment_color) !important;
+}
+
+.cm-s-obsidian span.cm-footref,
+.cm-s-obsidian span.cm-blockid {
+	font-family: var(--font-monospace);
+}
+
+a.internal-link,
+a.external-link,
+.cm-hmd-internal-link,
+.cm-hmd-external-link,
+.cm-link {
+	color: var(--link-color);
+	font-weight: var(--link-weight);
+}
+
+a.internal-link:hover,
+a.external-link:hover,
+.cm-hmd-external-link:hover,
+.cm-hmd-internal-link:hover,
+.cm-link:hover {
+	font-weight: var(--weight_bold);
+}
+
+.markdown-source-view.mod-cm6 .is-unresolved,
+.cm-hmd-barelink {
+	font-weight: var(--weight_medium);
+	color: var(--link-unresolved-color);
+	filter: var(--link-unresolved-filter);
+}
+
+.cm-url,
+.cm-s-obsidian span.cm-url {
+	color: var(--link-unresolved-color);
+	font-weight: var(--weight_light);
+}
+
+.cm-url:hover,
+.cm-s-obsidian span.cm-url:hover {
+	background-color: var(--block_background);
+	color: var(--link-unresolved-color);
+	font-weight: var(--weight_medium);
+}
+
+/* ————— ТЕГИ (Режим чтения и Live Preview) ————— */
+/* ————— ТЕГИ ————— */
+a.tag,
+.cm-hashtag {
+	font-family: var(--tag_font);
+	font-weight: var(--weight_light);
+	transition: font-weight 0.1s ease;
+	/* Добавляет плавность */
+}
+
+a.tag:hover,
+.cm-hashtag:hover {
+	font-weight: var(--weight_medium);
+}
+
+.cm-inline-code,
+.markdown-rendered code {
+	background-color: var(--code-background) !important;
+	color: var(--code-normal);
+	font-family: var(--font-monospace);
+	font-size: var(--code-size);
+	vertical-align: baseline;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.cm-s-obsidian .HyperMD-codeblock {
+	font-family: var(--font-monospace);
+	font-size: var(--font-small);
+	line-height: 1.3;
+	color: var(--code-normal);
+}
+
+.cm-s-obsidian div.HyperMD-codeblock-bg {
+	background-color: var(--code-background);
+	border-left: 1px solid var(--block_border_color);
+	border-right: 1px solid var(--block_border_color);
+}
+
+.cm-s-obsidian div.HyperMD-codeblock-begin-bg {
+	border-top: 1px solid var(--block_border_color);
+	border-top-left-radius: var(--block_border_radius);
+	border-top-right-radius: var(--block_border_radius);
+}
+
+.cm-s-obsidian div.HyperMD-codeblock-end-bg {
+	border-bottom: 1px solid var(--block_border_color);
+	border-bottom-left-radius: var(--block_border_radius);
+	border-bottom-right-radius: var(--block_border_radius);
+}
+
+.cm-s-obsidian span.cm-quote {
+	border: none;
+	color: var(--blockquote_color);
+}
+
+blockquote,
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
+	background-color: var(--blockquote-background);
+	border: none;
+	border-left: 5px solid var(--blockquote-border-color);
+	padding-left: 15px;
+}
+
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote.HyperMD-quote-1.cm-line {
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote.HyperMD-quote-1.HyperMD-quote-lazy.cm-line {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.markdown-source-view .cm-hmd-frontmatter {
+	font-family: var(--font-monospace);
+	font-size: var(--font-smaller);
+}
+
+.cm-s-obsidian div .cm-hmd-frontmatter.cm-atom,
+.markdown-preview-view code.language-yaml span.key.atrule {
+	color: var(--code-normal);
+}
+
+.cm-s-obsidian div .cm-hmd-frontmatter.cm-string,
+.markdown-preview-view code.language-yaml span.token.string {
+	color: var(--italic-color);
+}
+
+.cm-s-obsidian div .cm-hmd-frontmatter.cm-number,
+.markdown-preview-view code.language-yaml span.token.number {
+	color: var(--bold-color);
+	font-weight: var(--weight_medium);
+}
+
+.cm-s-obsidian div .cm-hmd-frontmatter.cm-def,
+.cm-s-obsidian div .cm-hmd-frontmatter.cm-meta,
+.markdown-preview-view code.language-yaml span.token.punctuation {
+	color: var(--comment_color);
+}
+
+.workspace-tab-header:hover .workspace-tab-header-inner-icon,
+.nav-action-button:hover,
+.view-header-icon:hover,
+.menu-item-icon:hover,
+.view-action:hover,
+.workspace-ribbon-collapse-btn:hover,
+.side-dock-ribbon-action:hover {
+	--icon-yellow-filter: invert(54%) sepia(80%) saturate(350%) hue-rotate(4deg) brightness(98%) contrast(85%);
+	filter: var(--icon-yellow-filter);
+}
+
+.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title {
+	color: var(--color-base-30);
+	font-weight: var(--tab-font-weight-active) !important;
+}
+
+.workspace-tab-header-inner .workspace-tab-header-inner-icon {
+	color: var(--color-base-30);
+}
+
+.status-bar:not(:hover) .status-bar-item {
+	opacity: 0.5;
+	transition: opacity 0.5s ease-in-out;
+}
+
+body .hide-properties .markdown-preview-section:first-of-type,
+body .hide-properties .cm-s-obsidian .cm-hmd-frontmatter {
+	display: none !important;
+}
+/* Базовый размер шрифта в свойствах */
+.markdown-source-view .metadata-container,
+.markdown-preview-view .metadata-container {
+    font-size: var(--font-tiny);
+}
+
+/* Сетка: 2 колонки на ПК, автоматическое сжатие до 1 на узких экранах */
+.metadata-properties {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--size-2-2) var(--size-4-2);
+}
+
+/* Строка свойства */
+.metadata-properties > .metadata-property {
+    display: flex;
+    align-items: center;
+    gap: var(--size-2-2);
+    min-width: 0; /* Не дает переполнять колонку */
+}
+
+/* Название свойства (ключ) */
+.metadata-property-key {
+    flex: 0 0 auto;
+    max-width: 40%;
+    min-width: 80px;
+    display: flex;
+    align-items: center;
+}
+
+/* Значение свойства */
+.metadata-property-value {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Иконки и крестики удаления */
+.metadata-property-icon,
+.multi-select-pill-remove-button {
+    height: var(--font-smaller);
+    width: var(--font-smaller);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* ————— ОСОБОЕ ПРАВИЛО ДЛЯ ALIASES ————— */
+
+/* Растягиваем aliases на всю ширину сетки над колонками */
+.metadata-properties > .metadata-property[data-property-key="aliases"] {
+    grid-column: 1 / -1;
+    width: 100%;
+    align-items: flex-start; /* держит лейбл 'aliases' вверху списка */
+}
+
+/* Делаем пилюли aliases аккуратным переносящимся списком */
+.metadata-property[data-property-key="aliases"] .metadata-property-value {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-content: flex-start;
+}
+
+.popover.hover-popover .metadata-container {
+	display: none !important;
+}
+
+
+/* ========================================================================= */
+/* ХАЙЛАЙТЫ (OBSIDIAN 1.14+)                                                 */
+/* ========================================================================= */
+
+/* 1. Нативно переопределяем системные переменные на палитру нашей темы */
+body {
+	--highlight-background-red: color-mix(in srgb, var(--color-red) 30%, transparent);
+	--highlight-background-orange: color-mix(in srgb, var(--color-orange) 30%, transparent);
+	--highlight-background-yellow: color-mix(in srgb, var(--color-yellow) 30%, transparent);
+	--highlight-background-green: color-mix(in srgb, var(--color-green) 30%, transparent);
+	--highlight-background-blue: color-mix(in srgb, var(--color-blue) 30%, transparent);
+	--highlight-background-purple: color-mix(in srgb, var(--color-purple) 30%, transparent);
+	--highlight-background-pink: color-mix(in srgb, var(--color-pink) 30%, transparent);
+}
+
+/* 2. Дефолтное кофейное выделение 
+   (Отсекаем цветные через :not, проверяя наличие дефиса в классе) */
+.markdown-preview-view mark:not([data-color]),
+.markdown-source-view.mod-cm6 .cm-highlight:not([class*="cm-highlight-"]),
+.markdown-source-view.mod-cm6 .cm-formatting-highlight:not([class*="cm-highlight-"]) {
+	background-color: var(--text-highlight-bg);
+	color: var(--mark_text);
+	padding: 0px 2px 1px 2px;
+}
+
+/* 3. Гарантируем читаемый цвет текста для ЦВЕТНЫХ хайлайтов */
+.markdown-preview-view mark[data-color],
+.markdown-source-view.mod-cm6 .cm-highlight[class*="cm-highlight-"],
+.markdown-source-view.mod-cm6 .cm-formatting-highlight[class*="cm-highlight-"] {
+	color: var(--text-normal);
+	padding: 0px 2px 1px 2px;
+}
+
+span.cm-highlight>a.cm-underline:hover,
+span.cm-highlight>span.data-link-text>a.cm-underline:hover {
+	color: var(--mark_text);
+	font-weight: var(--weight_bold);
+}
+
+/* ========================================================================= */
+/* 3. CALLOUTS (ezzick-020-callouts.css)                                     */
+/* ========================================================================= */
+
+body {
+	--callout-border-width: 3px;
+	--callout-border-opacity: 20%;
+	--callout-border-radius: var(--radius-m);
+	--callout-bg-opacity: 10%;
+	/* переведено в проценты для color-mix */
+}
+
+.theme-light {
+	--callout-bg-opacity: 22%;
+}
+
+.theme-dark {
+	--callout-bg-opacity: 15%;
+}
+
+.callout {
+	--callout-title-color: var(--callout-color);
+	/* убрали rgb() */
+	--callout-icon-color: var(--callout-color);
+	/* убрали rgb() */
+	border: none;
+	border-top: var(--callout-border-width) solid color-mix(in srgb, var(--callout-color) var(--callout-border-opacity), transparent);
+	border-radius: var(--callout-border-radius);
+	background-color: color-mix(in srgb, var(--callout-color) var(--callout-bg-opacity), transparent) !important;
+	padding: 8px 12px 8px 8px;
+}
+
+.callout .callout-content {
+	padding: 0px 12px 0px 8px;
+}
+
+.callout .callout-title {
+	color: var(--callout-color);
+	/* убрали rgb() */
+	font-family: var(--font-callout_title);
+	font-weight: var(--weight_medium);
+}
+
+.callout[data-callout="note"] {
+	--callout-color: var(--callout-note-color);
+	--callout-icon: file-text;
+}
+
+.callout[data-callout="info"] {
+	--callout-color: var(--callout-info-color);
+	--callout-icon: info;
+}
+
+.callout[data-callout="todo"] {
+	--callout-color: var(--callout-todo-color);
+	--callout-icon: blocks;
+}
+
+.callout[data-callout="abstract"],
+.callout[data-callout="tldr"] {
+	--callout-color: var(--callout-info-color);
+	--callout-icon: key-round;
+}
+
+.callout[data-callout="summary"] {
+	--callout-color: var(--callout-summary-color);
+	--callout-icon: scroll;
+}
+
+.callout[data-callout="tip"] {
+	--callout-color: var(--callout-summary-color);
+	--callout-icon: message-square;
+}
+
+.callout[data-callout="hint"] {
+	--callout-color: var(--callout-info-color);
+	--callout-icon: lightbulb;
+}
+
+.callout[data-callout="important"] {
+	--callout-color: var(--color-red);
+	--callout-icon: lucide-flame;
+}
+
+.callout[data-callout="question"] {
+	--callout-color: var(--callout-todo-color);
+	--callout-icon: rotate-3d;
+}
+
+.callout[data-callout="check"],
+.callout[data-callout="done"] {
+	--callout-color: var(--color-green);
+	--callout-icon: check;
+}
+
+.callout[data-callout="help"],
+.callout[data-callout="faq"] {
+	--callout-color: var(--color-orange);
+	--callout-icon: help-circle;
+}
+
+.callout[data-callout="warning"],
+.callout[data-callout="attention"],
+.callout[data-callout="caution"] {
+	--callout-color: var(--color-orange);
+	--callout-icon: alert-triangle;
+}
+
+.callout[data-callout="fail"],
+.callout[data-callout="error"],
+.callout[data-callout="missing"],
+.callout[data-callout="danger"],
+.callout[data-callout="bug"] {
+	--callout-color: var(--color-red);
+	--callout-icon: x;
+}
+
+.callout[data-callout="example"] {
+	--callout-color: var(--color-purple);
+	--callout-icon: list;
+}
+
+.callout[data-callout="quote"],
+.callout[data-callout="cite"] {
+	--callout-color: var(--callout-quote-color);
+	--callout-icon: quote-glyph;
+}
+
+.callout[data-callout="calendar"] {
+	--callout-color: var(--color-orange);
+	--callout-icon: lucide-calendar;
+}
+
+.callout[data-callout="sixdots"],
+.callout[data-callout="dots6"] {
+	--callout-color: var(--callout-quote-color);
+	--callout-icon: lucide-grip-vertical;
+}
+
+.callout[data-callout="sprint"] {
+	--callout-color: var(--callout-quote-color);
+	--callout-icon: lucide-sailboat;
+}
+
+.callout[data-callout="pin"] {
+	--callout-color: var(--callout-quote-color);
+	--callout-icon: lucide-pin;
+}
+
+.callout[data-callout="highlighter"] {
+	--callout-color: var(--callout-highlighter-color);
+	--callout-icon: highlighter;
+}
+
+.callout[data-callout="inbox"] {
+	--callout-color: var(--callout-inbox-color);
+	--callout-icon: box;
+}
+
+.callout[data-callout="@"] {
+	--callout-color: var(--color-purple);
+	--callout-icon: at-sign;
+}
+
+.callout[data-callout="connect"] {
+	--callout-color: var(--callout-connect-color);
+	--callout-icon: share-2;
+}
+
+.callout[data-callout="base_line"] {
+	--callout-color: var(--callout-connect-color);
+	--callout-icon: lucide-dna;
+}
+
+.callout[data-callout="paperclip"],
+.callout[data-callout="attachment"],
+.callout[data-callout="file"] {
+	--callout-color: var(--callout-connect-color);
+	--callout-icon: paperclip;
+}
+
+.view-content {
+	z-index: 0;
+}
+
+span[src$="background_fade"] img,
+div[src$="background_fade"] img {
+	object-fit: cover;
+	object-position: center;
+	height: 250px;
+	width: 100%;
+	margin: 0px auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+	mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+	opacity: 0.6;
+}
+
+
+/* ========================================================================= */
+/* 4. SVG CHECKBOXES (ezzick-020-checkbox_by_svg.css)                       */
+/* ========================================================================= */
+
+/* пустой чек-бокс; чек-бокс любого типа */
+body input[type=checkbox],
+input[type=checkbox] {
+	-webkit-appearance: none !important;
+	appearance: none !important;
+	border-radius: var(--checkbox-radius, 30%);
+	border: 1px solid var(--checkbox-border-color, var(--background-modifier-border));
+	filter: none;
+	padding: 0;
+	margin: 0 6px 0 0;
+	width: var(--checkbox-size, 17px) !important;
+	height: var(--checkbox-size, 17px) !important;
+}
+
+/* чуть поднимем квадратик чек-бокса над строкой */
+.mod-cm6 .HyperMD-task-line[data-task] .task-list-item-checkbox,
+.markdown-source-view.mod-cm6 .task-list-label .task-list-item-checkbox {
+	vertical-align: middle;
+	margin-top: -2px;
+}
+
+/* отменяем стандратный механизм вычеркивания задач */
+body .markdown-preview-view ul>li.task-list-item.is-checked,
+body .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:not([data-task=" "]) {
+	text-decoration: none;
+	color: var(--text-normal);
+}
+
+/* не вычеркивать задачу, а сделать её серой и шрифт меньшего размера */
+body .markdown-preview-view ul li[data-task="x"].task-list-item.is-checked,
+body .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:is([data-task="x"]),
+body li[data-task="x"].task-list-item.is-checked,
+body .markdown-preview-view ul li[data-task="X"].task-list-item.is-checked,
+body .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:is([data-task="X"]),
+body li[data-task="X"].task-list-item.is-checked,
+body:not(.tasks) .markdown-preview-view ul li[data-task="-"].task-list-item.is-checked,
+body:not(.tasks) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:is([data-task="-"]),
+body:not(.tasks) li[data-task="-"].task-list-item.is-checked,
+body .markdown-preview-view ul li[data-task=">"].task-list-item.is-checked,
+body .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:is([data-task=">"]),
+body li[data-task=">"].task-list-item.is-checked {
+	color: var(--text-muted);
+	font-size: var(--font-small);
+}
+
+/* ! эти инструкции действительно убирают галочку на прочих отметках check-box'а 
+	и добавляют фоновый цвет для картинок, описанных в -webkit-mask-image */
+body input[type=checkbox]:checked:after,
+input[type=checkbox]:checked:after {
+	top: 0px;
+	left: 0px;
+
+	width: var(--checkbox-size, 17px) !important;
+	height: var(--checkbox-size, 17px) !important;
+
+	background-color: var(--color-accent, var(--checkbox-marker-color));
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-image: none;
+	-webkit-mask-image: none;
+	content: "";
+}
+
+/* Check */
+input[data-task="x"]:checked,
+li[data-task="x"]>input:checked,
+li[data-task="x"]>p>input:checked,
+input[data-task="X"]:checked,
+li[data-task="X"]>input:checked,
+li[data-task="X"]>p>input:checked {
+	-webkit-mask-position: 50% 50%;
+	-webkit-mask-size: 90%;
+	-webkit-mask-image: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="none" fill-rule="evenodd" stroke="%23999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 12 6 15 12 6"></polyline></svg>');
+}
+
+/* Question */
+input[data-task="?"]:checked,
+li[data-task="?"]>input:checked,
+li[data-task="?"]>p>input:checked {
+	-webkit-mask-size: 100%;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="%23c6b18b" fill-rule="evenodd"><path d="M4.475 5.458c-.284 0-.514-.237-.47-.517C4.28 3.24 5.576 2 7.825 2c2.25 0 3.767 1.36 3.767 3.215c0 1.344-.665 2.288-1.79 2.973c-1.1.659-1.414 1.118-1.414 2.01v.03a.5.5 0 0 1-.5.5h-.77a.5.5 0 0 1-.5-.495l-.003-.2c-.043-1.221.477-2.001 1.645-2.712c1.03-.632 1.397-1.135 1.397-2.028c0-.979-.758-1.698-1.926-1.698c-1.009 0-1.71.529-1.938 1.402c-.066.254-.278.461-.54.461h-.777ZM7.496 14c.622 0 1.095-.474 1.095-1.09c0-.618-.473-1.092-1.095-1.092c-.606 0-1.087.474-1.087 1.091S6.89 14 7.496 14Z"/></svg>')
+}
+
+/* Important */
+input[data-task="!"]:checked,
+li[data-task="!"]>input:checked,
+li[data-task="!"]>p>input:checked {
+	-webkit-mask-size: 100%;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="%23c6b18b" fill-rule="evenodd"><path d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"/></svg>');
+}
+
+/* Star */
+input[data-task="*"]:checked,
+li[data-task="*"]>input:checked,
+li[data-task="*"]>p>input:checked {
+	-webkit-mask-size: 100%;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="%23c6b18b" fill-rule="evenodd"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>');
+}
+
+input[data-task="-"]:checked,
+li[data-task="-"]>input:checked,
+li[data-task="-"]>p>input:checked {
+	-webkit-mask-size: 100%;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" ><path fill="%23999999" fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" %2F><%2Fsvg>');
+}
+
+/* Forward */
+input[data-task=">"]:checked,
+li[data-task=">"]>input:checked,
+li[data-task=">"]>p>input:checked {
+	-webkit-mask-size: 100%;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 21" ><path fill="%23c6b18b" fill-rule="evenodd" d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>');
+	transform: rotate(90deg);
+}
+
+/* Schedule */
+input[data-task="<"]:checked,
+li[data-task="<"]>input:checked,
+li[data-task="<"]>p>input:checked {
+	-webkit-mask-size: 100%;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" ><path fill="%23c6b18b" fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" /></svg>');
+}
+
+/* Quote */
+input[data-task="\""]:checked,
+input[data-task="“"]:checked,
+li[data-task="\""]>input:checked,
+li[data-task="\""]>p>input:checked,
+li[data-task="“"]>input:checked,
+li[data-task="“"]>p>input:checked {
+	-webkit-mask-size: 100%;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" ><path fill="%23c6b18b" fill-rule="evenodd" d="M6.5 10c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.318.142-.686.238-1.028.466c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.945c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 6.5 10zm11 0c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.317.143-.686.238-1.028.467c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.944c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 17.5 10z"%2F><%2Fsvg>');
+}
+
+/* bookmark */
+input[data-task="b"]:checked,
+li[data-task="b"]>input:checked,
+li[data-task="b"]>p>input:checked {
+	-webkit-mask-size: 100%;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" > <path fill="%23c6b18b" fill-rule="evenodd" d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" /></svg>');
+}
+
+/* thumbs down */
+input[data-task="c"]:checked,
+li[data-task="c"]>input:checked,
+li[data-task="c"]>p>input:checked {
+	-webkit-mask-size: 100%;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="%23da6362" fill-rule="evenodd"><path d="M18 9.5a1.5 1.5 0 11-3 0v-6a1.5 1.5 0 013 0v6zM14 9.667v-5.43a2 2 0 00-1.105-1.79l-.05-.025A4 4 0 0011.055 2H5.64a2 2 0 00-1.962 1.608l-1.2 6A2 2 0 004.44 12H8v4a2 2 0 002 2 1 1 0 001-1v-.667a4 4 0 01.8-2.4l1.4-1.866a4 4 0 00.8-2.4z" /></svg>');
+}
+
+/* down */
+input[data-task="d"]:checked,
+li[data-task="d"]>input:checked,
+li[data-task="d"]>p>input:checked {
+	-webkit-mask-size: 100%;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" > <path fill="%23c6b18b" fill-rule="evenodd" d="M12 13a1 1 0 100 2h5a1 1 0 001-1V9a1 1 0 10-2 0v2.586l-4.293-4.293a1 1 0 00-1.414 0L8 9.586 3.707 5.293a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0L11 9.414 14.586 13H12z" /> </svg>');
+}
+
+/* fire */
+input[data-task="f"]:checked,
+li[data-task="f"]>input:checked,
+li[data-task="f"]>p>input:checked {
+	-webkit-mask-size: 100%;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" > <path fill="%23c6b18b" fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" /> </svg>');
+}
+
+/* idea */
+input[data-task="I"]:checked,
+li[data-task="I"]>input:checked,
+li[data-task="I"]>p>input:checked {
+	-webkit-mask-size: 100%;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" > <path fill="%23c6b18b" fill-rule="evenodd" d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z" /> </svg>');
+}
+
+/* information */
+input[data-task="i"]:checked,
+li[data-task="i"]>input:checked,
+li[data-task="i"]>p>input:checked {
+	-webkit-mask-size: 100%;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512" > <path  fill="none" stroke="%23c6b18b" stroke-linecap="round" stroke-linejoin="round" stroke-width="40" d="M196 220h64v172" %2F> <path fill="none" stroke="%23c6b18b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="40" d="M187 396h138" %2F> <path fill="%23c6b18b" d="M256 160a32 32 0 1 1 32-32a32 32 0 0 1-32 32Z" %2F> <%2Fsvg>');
+}
+
+/* key */
+input[data-task="k"]:checked,
+li[data-task="k"]>input:checked,
+li[data-task="k"]>p>input:checked {
+	-webkit-mask-size: 100%;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" > <path fill="%23c6b18b" fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" /> </svg>');
+}
+
+/* location */
+input[data-task="l"]:checked,
+li[data-task="l"]>input:checked,
+li[data-task="l"]>p>input:checked {
+	-webkit-mask-size: 100%;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" ><path fill="%23c6b18b" fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" /></svg>');
+}
+
+/* thumbs up */
+input[data-task="p"]:checked,
+li[data-task="p"]>input:checked,
+li[data-task="p"]>p>input:checked {
+	-webkit-mask-size: 100%;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" > <path fill="%23c6b18b" fill-rule="evenodd" d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" /> </svg>');
+}
+
+/* saving */
+input[data-task="s"]:checked,
+li[data-task="s"]>input:checked,
+li[data-task="s"]>p>input:checked {
+	-webkit-mask-size: 100%;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48" > <path fill="%23c6b18b" fill-rule="evenodd" d="M26 8a2 2 0 1 0-4 0v2a8 8 0 1 0 0 16v8a4.002 4.002 0 0 1-3.773-2.666a2 2 0 0 0-3.771 1.332A8.003 8.003 0 0 0 22 38v2a2 2 0 1 0 4 0v-2a8 8 0 1 0 0-16v-8a4.002 4.002 0 0 1 3.773 2.666a2 2 0 0 0 3.771-1.332A8.003 8.003 0 0 0 26 10V8Zm-4 6a4 4 0 0 0 0 8v-8Zm4 12v8a4 4 0 0 0 0-8Z" clip-rule="evenodd" %2F> <%2Fsvg>')
+}
+
+/* up */
+input[data-task="u"]:checked,
+li[data-task="u"]>input:checked,
+li[data-task="u"]>p>input:checked {
+	-webkit-mask-size: 100%;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" > <path fill="%23c6b18b" fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" /> </svg>');
+}
+
+/* win */
+input[data-task="w"]:checked,
+li[data-task="w"]>input:checked,
+li[data-task="w"]>p>input:checked {
+	-webkit-mask-size: 100%;
+	-webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" > <path fill="%23c6b18b" fill-rule="evenodd" d="M6 3a1 1 0 011-1h.01a1 1 0 010 2H7a1 1 0 01-1-1zm2 3a1 1 0 00-2 0v1a2 2 0 00-2 2v1a2 2 0 00-2 2v.683a3.7 3.7 0 011.055.485 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0A3.7 3.7 0 0118 12.683V12a2 2 0 00-2-2V9a2 2 0 00-2-2V6a1 1 0 10-2 0v1h-1V6a1 1 0 10-2 0v1H8V6zm10 8.868a3.704 3.704 0 01-4.055-.036 1.704 1.704 0 00-1.89 0 3.704 3.704 0 01-4.11 0 1.704 1.704 0 00-1.89 0A3.704 3.704 0 012 14.868V17a1 1 0 001 1h14a1 1 0 001-1v-2.132zM9 3a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm3 0a1 1 0 011-1h.01a1 1 0 110 2H13a1 1 0 01-1-1z" /> </svg>');
+}
+
+/* Half done */
+body input[type=checkbox][data-task="/"],
+body li[data-task="/"]>input,
+body li[data-task="/"]>p>input,
+input[type=checkbox][data-task="/"],
+li[data-task="/"]>input,
+li[data-task="/"]>p>input {
+	border: 1px solid var(--checkbox-border-color, var(--background-modifier-border));
+	background-color: transparent !important;
+	position: relative;
+	overflow: hidden;
+}
+
+body input[type=checkbox][data-task="/"]:after,
+body li[data-task="/"]>input:after,
+body li[data-task="/"]>p>input:after,
+input[type=checkbox][data-task="/"]:after,
+li[data-task="/"]>input:after,
+li[data-task="/"]>p>input:after {
+	content: " " !important;
+	display: block !important;
+	background-color: var(--color-accent, var(--checkbox-marker-color)) !important;
+	width: calc(50%) !important;
+	height: 100% !important;
+	-webkit-mask-image: none !important;
+}
+
+/* Quarter done */
+body input[type=checkbox][data-task="+"],
+body li[data-task="+"]>input,
+body li[data-task="+"]>p>input,
+input[type=checkbox][data-task="+"],
+li[data-task="+"]>input,
+li[data-task="+"]>p>input {
+	border: 1px solid var(--checkbox-border-color, var(--background-modifier-border));
+	background-color: transparent !important;
+	position: relative;
+	overflow: hidden;
+}
+
+body input[type=checkbox][data-task="+"]:after,
+body li[data-task="+"]>input:after,
+body li[data-task="+"]>p>input:after,
+input[type=checkbox][data-task="+"]:after,
+li[data-task="+"]>input:after,
+li[data-task="+"]>p>input:after {
+	content: " " !important;
+	display: block !important;
+	background-color: var(--color-accent, var(--checkbox-marker-color)) !important;
+	width: calc(50%) !important;
+	height: calc(50%) !important;
+	-webkit-mask-image: none !important;
+}
+
+/* ========================================================================= */
+/* 5. DATAVIEW (ezzick-020-dataview.css)                                     */
+/* ========================================================================= */
+
+.dataview {
+	border-style: none;
+}
+
+.dataview.inline-field-key {
+	background-color: var(--background-inline-code);
+	color: var(--code-normal);
+	font-family: var(--font-monospace);
+	font-size: var(--code-size) !important;
+	vertical-align: baseline;
+}
+
+.dataview.inline-field-value {
+	font-size: var(--font-smaller);
+}
+
+.dataview.inline-field-standalone-value {
+	font-size: var(--font-smaller);
+}
+
+.field_Properties {
+	color: var(--comment_color);
+	font-family: var(--font-monospace);
+	font-size: var(--font-smaller);
+}
+
+.GoalProgress table>tbody>tr>td:first-of-type {
+	font-size: var(--font-smaller);
+}
+
+
+/* ========================================================================= */
+/* 6. TABLES (ezzick-020-table.css)                                         */
+/* ========================================================================= */
+
+table,
+.table-wrapper,
+.block-language-dataviewjs.node-insert-event span[dir="ltr"]>table {
+	background-color: var(--background-secondary);
+	border-top: 3px solid color-mix(in srgb, var(--callout-color) 20%, transparent);
+	border-radius: var(--radius-m);
+	width: 100%;
+	max-width: 100%;
+	overflow-x: auto;
+}
+
+thead {
+	background-color: var(--table-header-background);
+	padding: 15px 20px;
+}
+
+th,
+th a,
+th .internal-link {
+	font-size: var(--font-smaller) !important;
+	color: var(--table-header-color) !important;
+	letter-spacing: 0.3px;
+	text-shadow: 0 1px 1px #99999988;
+}
+
+td {
+	font-size: var(--font-smaller) !important;
+	padding: 2px 15px 1px 10px;
+	color: var(--text-normal);
+}
+
+tbody tr:hover td {
+	background-color: color-mix(in srgb, var(--color-accent) 15%, transparent) !important;
+}
+
+tbody tr td:hover {
+	/*border-bottom: 1px solid var(--color-accent) !important;*/
+	background-color: color-mix(in srgb, var(--color-accent) 25%, transparent) !important;
+}
+
+table>thead>tr>th:last-of-type,
+table>tbody>tr>td:last-of-type {
+	border-left: 1px solid var(--table-border-color);
+}
+
+table>thead>tr>th:not(:last-of-type),
+table>tbody>tr>td:not(:last-of-type) {
+	border-right: 1px solid var(--table-border-color);
+}
+
+table>tbody>tr:not(:last-of-type)>td,
+table>tbody>tr:last-of-type>td {
+	border-bottom: 1px solid var(--table-border-color);
+}
+
+/* Исправление цвета заголовка таблицы в режиме редактирования (Live Preview) */
+.markdown-source-view.mod-cm6 .HyperMD-table-row-0,
+.cm-s-obsidian .HyperMD-table-row-0 {
+	color: var(--text-normal) !important;
+	font-weight: var(--weight_bold) !important;
+}
+
+.FirstFieldImage table>tbody>tr>td:first-of-type {
+	text-align: center;
+	width: 5%;
+}
+
+.FirstFieldImage table>tbody>tr>td:not(:first-of-type) {
+	width: 10%;
+}
+
+.FirstFieldImage_3column table>tbody>tr>td:first-of-type {
+	text-align: center;
+	width: 20%;
+}
+
+.FirstFieldImage_3column table>tbody>tr>td:not(:first-of-type) {
+	width: 40%;
+}
+
+.FirstFieldLink table>tbody>tr>td:first-of-type {
+	width: 20%;
+}
+
+.FirstFieldLink table>tbody>tr>td:not(:first-of-type) {
+	width: 10%;
+}
+
+.FirstFieldLongText .table-wrapper,
+.FirstFieldLongText table {
+	width: 100% !important;
+}
+
+.FirstFieldLongText table>tbody>tr>td:first-of-type {
+	width: 30%;
+	font-size: var(--font-smaller);
+}
+
+.FirstFieldLongText table>tbody>tr>td:not(:first-of-type) {
+	width: 15%;
+}
+
+/* 7. PLUGIN OVERRIDES */
+
+/* ————— ТУМБЛЕРЫ НАСТРОЕК (Системные и в плагинах) ————— */
+
+/* Выключенное состояние (тёмно-серое для обеих тем) */
+body .checkbox-container:not(.is-enabled),
+body [role="switch"][aria-checked="false"] {
+	background-color: var(--color-base-40) !important;
+}
+
+/* Включенное состояние: Тёмная тема (зелёный) */
+.theme-dark .checkbox-container.is-enabled,
+.theme-dark [role="switch"][aria-checked="true"] {
+	background-color: var(--color-accent) !important;
+}
+
+/* Включенное состояние: Светлая тема (оранжевый) */
+.theme-light .checkbox-container.is-enabled,
+.theme-light [role="switch"][aria-checked="true"] {
+	background-color: var(--color-accent) !important;
+}
+
+/* Яркий белый цвет для самого ползунка (кружочка) */
+body .checkbox-container:after,
+body [role="switch"]>span {
+	background-color: var(--color-white) !important;
+}
+
+
+/* ========================================================================= */
+/* ИНВЕРСИЯ SVG ИКОНОК В СВЕТЛОЙ ТЕМЕ (Supercharged Links & Tabs)
+/* ========================================================================= */
+
+.theme-light .data-link-icon::before,
+.theme-light .workspace-tab-header-inner-icon svg {
+	/* 
+	   Превращаем светло-бежевый (#c6b18b) в плотный тёмно-коричневый (например, #4f3926).
+	   Фильтр вычислен математически для сдвига конкретно этого оттенка.
+	*/
+	filter: brightness(0.4) sepia(0.5) hue-rotate(-20deg) saturate(1.5) contrast(1.2);
+}
+
+/* На всякий случай: при наведении делаем иконку чуть темнее (или акцентной) */
+.theme-light .workspace-tab-header:hover .workspace-tab-header-inner-icon svg {
+	filter: brightness(0.2) sepia(0.8) hue-rotate(5deg) saturate(3) contrast(1.5);
+}
+
+/* ────────── < PROPERTIES | УПРАВЛЕНИЕ СВОЙСТВАМИ > ────────── */
+
+/* 1. Полное скрытие свойств в дашбордах и при классе hide-properties */
+.dashboard-right-panel .metadata-container,
+.hide-properties .metadata-container {
+	display: none !important;
+}
